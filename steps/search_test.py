@@ -10,7 +10,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 def step(context, url):
     context.browser = webdriver.Chrome()
     context.browser.maximize_window()
-    context.browser.get("http://ya.ru")
+    context.browser.get(url)
 
 
 # Введем поисковый запрос "Тест"
