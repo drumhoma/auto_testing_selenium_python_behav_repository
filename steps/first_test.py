@@ -13,6 +13,12 @@ def step(context, url):
     context.browser.get("http://ya.ru")
 
 
+# Введем поисковый запрос "Тест"
+@when("search text '{text}'")
+def step(context, text):
+    context.browser.find_element(By.XPATH, "//input[@name='text']").send_keys(f"{text}")
+
+
 # Теперь нажмем на кнопку "Найти"
 @when("push button with text '{text}'")
 def step(context, text):

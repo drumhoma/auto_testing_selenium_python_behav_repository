@@ -4,5 +4,6 @@ Feature: Checking search
   Scenario: Сheck some text in search results
 # И используем наши шаги.
     Given website 'ya.ru'
-    When push button with text 'Найти'
+    When search text 'Тест'
+    And push button with text 'Найти'
     Then page include text 'Задан пустой поисковый запрос'
