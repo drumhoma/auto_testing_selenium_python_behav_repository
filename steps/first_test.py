@@ -29,7 +29,7 @@ def step(context, text):
 @then("page include text '{text}'")
 def step(context, text):
     WebDriverWait(context.browser, 3).until(
-        EC.presence_of_element_located((By.XPATH, f'//*[contains(text(), "{text}")]')))
-    assert context.browser.find_element(By.XPATH, f'//*[contains(text(), "{text}")]')
+        EC.presence_of_element_located((By.XPATH, f"//*[contains(text(), '{text}')]")))
+    assert context.browser.find_element(By.XPATH, f"//*[contains(text(), '{text}')]")
 
     context.browser.quit()
