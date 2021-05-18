@@ -22,7 +22,7 @@ def step(context, text):
 # Теперь нажмем на кнопку "Найти"
 @when("push button with text '{text}'")
 def step(context, text):
-    WebDriverWait(context.browser, 3).until(EC.element_to_be_clickable((By.XPATH, '//button'))).click()
+    WebDriverWait(context.browser, 3).until(EC.element_to_be_clickable((By.XPATH, "//button"))).click()
 
 
 # Проверим, что на странице с результатами поиска есть искомый текст
