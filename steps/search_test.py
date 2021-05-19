@@ -1,5 +1,6 @@
 from behave import *
 from selenium import webdriver
+from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
@@ -22,7 +23,10 @@ def step(context, text):
 # Теперь нажмем на кнопку "Найти"
 @when("push button with text '{text}'")
 def step(context, text):
-    WebDriverWait(context.browser, 3).until(EC.element_to_be_clickable((By.XPATH, "//button"))).click()
+    button = WebDriverWait(context.browser, 3).until(EC.element_to_be_clickable((By.XPATH, "//button")))
+    button_text = button.text
+    button.click()
+    assert button_text == f'{text}', f"Кнопка '{text}' не найдена"
 
 
 # Проверим, что на странице с результатами поиска есть искомый текст
@@ -30,6 +34,12 @@ def step(context, text):
 def step(context, text):
     WebDriverWait(context.browser, 3).until(
         EC.presence_of_element_located((By.XPATH, f"//*[contains(text(), '{text}')]")))
-    assert context.browser.find_element(By.XPATH, f"//*[contains(text(), '{text}')]")
-
     context.browser.quit()
+
+    # try:
+    #     text = WebDriverWait(context.browser, 3).until(
+    #         EC.presence_of_element_located((By.XPATH, f"//*[contains(text(), '{text}')]")))
+    # except TimeoutException:
+    #     return False
+    # return True
+    # assert text != '{text}', f"В тексте нет слова'{text}'"
