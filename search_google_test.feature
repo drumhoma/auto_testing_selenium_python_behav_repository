@@ -11,6 +11,6 @@ Feature: Google Searching
     And the related results include '<related>'
 
     Examples: Animals
-      | phrase   | related                |
-      | panda    | Ailuropoda melanoleuca |
-      | elephant | The White Stripes      |
+      | phrase   | related  |
+      | panda    | panda    |
+      | elephant | elephant |
