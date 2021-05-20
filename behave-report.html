@@ -1,0 +1,534 @@
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <title>Behave Test Report</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <style type="text/css">
+      <!--
+body{font-size:0;color:#fff;margin:0;
+padding:0}.behave,td,th{font:400 11px "Lucida Grande",Helvetica,sans-serif;
+background:#fff;color:#000}.behave #behave-header,td #behave-header,
+th #behave-header{background:#65c400;color:#fff;height:8em}.behave
+#behave-header #expand-collapse p,td #behave-header #expand-collapse
+p,th #behave-header #expand-collapse p{float:right;margin:0 0 0 10px}
+.background h3,.behave .scenario h3,td .scenario h3,th .scenario h3{
+font-size:11px;padding:3px;margin:0;background:#65c400;color:#fff;
+font-weight:700}.background h3{font-size:1.2em;background:#666}.behave
+h1,td h1,th h1{margin:0 10px;padding:10px;font-family:'Lucida Grande',
+Helvetica,sans-serif;font-size:2em;position:absolute}.behave h4,td h4,
+th h4{margin-bottom:2px}.behave div.feature,td div.feature,th div.feature
+{padding:2px;margin:0 10px 5px}.behave div.examples,td div.examples,th
+div.examples{padding:0 0 0 1em}.behave .stats,td .stats,th .stats{margin:2em}
+.behave .summary ul.features li,td .summary ul.features li,th .summary
+ul.features li{display:inline}.behave .step_name,td .step_name,th .step_name
+{float:left}.behave .step_file,td .step_file,th .step_file{text-align:right;
+color:#999}.behave .step_file a,td .step_file a,th .step_file a{color:#999}.behave
+.scenario_file,td .scenario_file,th .scenario_file{float:right;color:#999}.behave
+.tag,td .tag,th .tag{font-weight:700;color:#246ac1}.behave .backtrace,td
+.backtrace,th .backtrace{margin-top:0;margin-bottom:0;margin-left:1em;color:#000}
+.behave a,td a,th a{text-decoration:underline;color:#be5c00;margin-right:0.5em}
+.behave a:hover,td a:hover,th a:hover{text-decoration:none}.behave a:visited,td
+a:visited,th a:visited{font-weight:400}.behave a div.examples,td a div.examples,
+th a div.examples{margin:5px 0 5px 15px;color:#000}.behave .outline table,
+td .outline table,th .outline table{margin:0 0 5px 10px}.behave table,
+td table,th table{border-collapse:collapse}.behave table td,td table td,
+th table td{padding:3px 3px 3px 5px}.behave table td.failed,td table td.failed,
+th table td.failed{border-left:5px solid #c20000;border-bottom:1px solid
+#c20000;background:#fffbd3;color:#c20000}.behave table td.passed,td table
+td.passed,th table td.passed{border-left:5px solid #65c400;border-bottom:1px
+solid #65c400;background:#dbffb4;color:#3d7700}.behave table td.skipped,td
+table td.skipped,th table td.skipped{border-left:5px solid #0ff;border-bottom:1px
+solid #0ff;background:#e0ffff;color:#011}.behave table td.pending,.behave table
+td.undefined,td table td.pending,td table td.undefined,th table td.pending,th table
+td.undefined{border-left:5px solid #faf834;border-bottom:1px solid #faf834;
+background:#fcfb98;color:#131313}.behave table td.message,td table td.message,th
+table td.message{border-left:5px solid #0ff;border-bottom:1px solid #0ff;
+background:#e0ffff;color:#011}.behave ol,td ol,th ol{list-style:none;
+margin:0;padding:0}.behave ol li.step,td ol li.step,th ol li.step{
+padding:3px 3px 3px 18px;margin:5px 0 5px 5px}.behave ol li,td ol li,th
+ol li{margin:0 0 0 1em;padding:0 0 0 .2em}.behave ol li span.param,td
+ol li span.param,th ol li span.param{font-weight:700}.behave ol li.failed,td
+ol li.failed,th ol li.failed{border-left:5px solid #c20000;border-bottom:1px
+solid #c20000;background:#fffbd3;color:#c20000}.behave ol li.passed,td ol
+li.passed,th ol li.passed{border-left:5px solid #65c400;border-bottom:1px
+solid #65c400;background:#dbffb4;color:#3d7700}.behave ol li.skipped,td ol
+li.skipped,th ol li.skipped{border-left:5px solid #0ff;border-bottom:1px
+solid #0ff;background:#e0ffff;color:#011}.behave ol li.pending,.behave ol
+li.undefined,td ol li.pending,td ol li.undefined,th ol li.pending,th ol
+li.undefined{border-left:5px solid #faf834;border-bottom:1px solid
+#faf834;background:#fcfb98;color:#131313}.behave ol li.message,td ol
+li.message,th ol li.message{border-left:5px solid #0ff;border-bottom:1px
+solid #0ff;background:#e0ffff;color:#011;margin-left:10px}.behave #summary,td
+#summary,th #summary{margin:0;padding:5px 10px;text-align:right;top:0;
+right:0;float:right}.behave #summary p,td #summary p,th #summary
+p{margin:0 0 0 2px}.behave #summary #totals,td #summary #totals,th
+#summary #totals{font-size:1.2em} h3.failed,#behave-header.failed{background:
+#c40d0d !important} h3.undefined,#behave-header.undefined{background:#faf834
+ !important; color:#000 !important} #behave-header.failed a{color:#fff} pre {
+ white-space: pre-wrap} .step_duration{padding-left:1em}
+-->
+    </style>
+    <script type="text/javascript">
+      <!--
+function Collapsible_toggle(id)
+{
+    var elem = document.getElementById(id);
+    elem.style.display = (elem.style.display == 'none' ? 'block' : 'none');
+    return false;
+}
+
+function Collapsible_expandAll(className)
+{
+    var elems = document.getElementsByClassName(className);
+    for (var i=0; i < elems.length; i++) {
+        elems[i].style.display = 'block';
+    }
+}
+
+function Collapsible_collapseAll(className)
+{
+    var elems = document.getElementsByClassName(className);
+    for (var i=0; i < elems.length; i++) {
+        elems[i].style.display = 'none';
+    }
+}
+
+function Collapsible_expandAllFailed()
+{
+    var elems = document.getElementsByClassName('failed');
+    for (var i=0; i < elems.length; i++) {
+        var elem = elems[i];
+        if (elem.nodeName == 'H3'){
+            elem.parentElement.getElementsByTagName('ol')[0].style.display = 'block';
+        }
+    }
+}
+-->
+    </script>
+  </head>
+  <body>
+    <div class="behave">
+      <div id="behave-header" class="failed">
+        <div id="label">
+          <h1>Behave Test Report</h1>
+        </div>
+        <div id="summary">
+          <p id="totals">
+            <p id="feature_totals">Features: failed: 1, passed: 1</p>
+            <p id="scenario_totals">Scenarios: failed: 1, passed: 1</p>
+            <p id="step_totals">Steps: untested: 5, passed: 4</p>
+          </p>
+          <p id="duration">Finished in 36.0 seconds</p>
+          <div id="expand-collapse">
+            <a id="expander" href="#" onclick="Collapsible_expandAll('scenario_steps')">Expand All</a>
+            <span> | </span>
+            <a id="collapser" href="#" onclick="Collapsible_collapseAll('scenario_steps')">Collapse All</a>
+            <span> | </span>
+            <a id="failed_expander" href="#" onclick="Collapsible_expandAllFailed()">Expand All Failed</a>
+          </div>
+        </div>
+      </div>
+      <div class="feature">
+        <h2>
+          <span class="val">Feature: Google Searching</span>
+        </h2>
+        <pre class="message">As a web surfer, I want to search Google, so that I can learn new things.</pre>
+        <span/>
+      </div>
+      <div class="scenario">
+        <span class="scenario_file">search_google_test.feature:15</span>
+        <span class="tag">@automated, @google, @panda</span>
+        <h3 onclick="Collapsible_toggle('scenario_0')" class="failed">
+          <span class="val">Scenario Outline: Simple Google searches -- @1.1 Animals</span>
+        </h3>
+        <ol class="scenario_steps" id="scenario_0">
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">Given </span>
+              <span class="step val">a web browser is on the Google page</span>
+              <small class="step_duration">(2.201s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/search_google_test.py:9</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">When </span>
+              <span class="step val">
+                <span>the search phrase '</span>
+                <b>panda</b>
+                <span>' is entered</span>
+              </span>
+              <small class="step_duration">(0.067s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/search_google_test.py:17</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">And </span>
+              <span class="step val">the button 'Поиск в Google' is clicked</span>
+              <small class="step_duration">(2.062s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/search_google_test.py:23</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">Then </span>
+              <span class="step val">
+                <span>results for '</span>
+                <b>panda</b>
+                <span>' are shown</span>
+              </span>
+              <small class="step_duration">(2.196s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/search_google_test.py:30</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step failed">
+            <div class="step_name">
+              <span class="keyword">And </span>
+              <span class="step val">
+                <span>the related results include '</span>
+                <b>panda</b>
+                <span>'</span>
+              </span>
+              <small class="step_duration">(8.172s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/search_google_test.py:37</span>
+            </div>
+            <span class="embed">
+              <a onclick="Collapsible_toggle('embed_1')">Error Message</a>
+              <pre id="embed_1" style="display: none">Traceback (most recent call last):
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\connection.py&quot;, line 169, in _new_conn
+    conn = connection.create_connection(
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\util\connection.py&quot;, line 96, in create_connection
+    raise err
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\util\connection.py&quot;, line 86, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\connectionpool.py&quot;, line 699, in urlopen
+    httplib_response = self._make_request(
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\connectionpool.py&quot;, line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\connection.py&quot;, line 234, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File &quot;C:\Python\lib\http\client.py&quot;, line 1253, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File &quot;C:\Python\lib\http\client.py&quot;, line 1299, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File &quot;C:\Python\lib\http\client.py&quot;, line 1248, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File &quot;C:\Python\lib\http\client.py&quot;, line 1008, in _send_output
+    self.send(msg)
+  File &quot;C:\Python\lib\http\client.py&quot;, line 948, in send
+    self.connect()
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\connection.py&quot;, line 200, in connect
+    conn = self._new_conn()
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\connection.py&quot;, line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000001D410665B50&gt;: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\behave\model.py&quot;, line 1329, in run
+    match.run(runner.context)
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\behave\matchers.py&quot;, line 98, in run
+    self.func(context, *args, **kwargs)
+  File &quot;steps\search_google_test.py&quot;, line 39, in step
+    WebDriverWait(context.browser, 3).until(
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\selenium\webdriver\support\wait.py&quot;, line 71, in until
+    value = method(self._driver)
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\selenium\webdriver\support\expected_conditions.py&quot;, line 64, in __call__
+    return _find_element(driver, self.locator)
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\selenium\webdriver\support\expected_conditions.py&quot;, line 411, in _find_element
+    return driver.find_element(*by)
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py&quot;, line 976, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py&quot;, line 319, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\selenium\webdriver\remote\remote_connection.py&quot;, line 374, in execute
+    return self._request(command_info[0], url, body=data)
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\selenium\webdriver\remote\remote_connection.py&quot;, line 397, in _request
+    resp = self._conn.request(method, url, body=body, headers=headers)
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\request.py&quot;, line 78, in request
+    return self.request_encode_body(
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\request.py&quot;, line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\poolmanager.py&quot;, line 375, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\connectionpool.py&quot;, line 783, in urlopen
+    return self.urlopen(
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\connectionpool.py&quot;, line 783, in urlopen
+    return self.urlopen(
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\connectionpool.py&quot;, line 783, in urlopen
+    return self.urlopen(
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\connectionpool.py&quot;, line 755, in urlopen
+    retries = retries.increment(
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\util\retry.py&quot;, line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=51694): Max retries exceeded with url: /session/6a17b203fc47350ae3c2b2cc9aacbd01/element (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001D410665B50&gt;: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+
+Captured logging:
+WARNING:urllib3.connectionpool:Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001D4105EBC10&gt;: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/6a17b203fc47350ae3c2b2cc9aacbd01/element
+WARNING:urllib3.connectionpool:Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001D410648730&gt;: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/6a17b203fc47350ae3c2b2cc9aacbd01/element
+WARNING:urllib3.connectionpool:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001D410658640&gt;: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/6a17b203fc47350ae3c2b2cc9aacbd01/element</pre>
+                  
+            </span>
+          </li>
+        </ol>
+        <span/>
+      </div>
+      <div class="scenario">
+        <span class="scenario_file">search_google_test.feature:16</span>
+        <span class="tag">@automated, @google, @panda</span>
+        <h3 onclick="Collapsible_toggle('scenario_1')" class="failed">
+          <span class="val">Scenario Outline: Simple Google searches -- @1.2 Animals</span>
+        </h3>
+        <ol class="scenario_steps" id="scenario_1">
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">Given </span>
+              <span class="step val">a web browser is on the Google page</span>
+              <small class="step_duration">(2.283s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/search_google_test.py:9</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">When </span>
+              <span class="step val">
+                <span>the search phrase '</span>
+                <b>elephant</b>
+                <span>' is entered</span>
+              </span>
+              <small class="step_duration">(0.114s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/search_google_test.py:17</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">And </span>
+              <span class="step val">the button 'Поиск в Google' is clicked</span>
+              <small class="step_duration">(2.098s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/search_google_test.py:23</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">Then </span>
+              <span class="step val">
+                <span>results for '</span>
+                <b>elephant</b>
+                <span>' are shown</span>
+              </span>
+              <small class="step_duration">(3.168s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/search_google_test.py:30</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step failed">
+            <div class="step_name">
+              <span class="keyword">And </span>
+              <span class="step val">
+                <span>the related results include '</span>
+                <b>elephant</b>
+                <span>'</span>
+              </span>
+              <small class="step_duration">(8.175s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/search_google_test.py:37</span>
+            </div>
+            <span class="embed">
+              <a onclick="Collapsible_toggle('embed_2')">Error Message</a>
+              <pre id="embed_2" style="display: none">Traceback (most recent call last):
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\connection.py&quot;, line 169, in _new_conn
+    conn = connection.create_connection(
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\util\connection.py&quot;, line 96, in create_connection
+    raise err
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\util\connection.py&quot;, line 86, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\connectionpool.py&quot;, line 699, in urlopen
+    httplib_response = self._make_request(
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\connectionpool.py&quot;, line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\connection.py&quot;, line 234, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File &quot;C:\Python\lib\http\client.py&quot;, line 1253, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File &quot;C:\Python\lib\http\client.py&quot;, line 1299, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File &quot;C:\Python\lib\http\client.py&quot;, line 1248, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File &quot;C:\Python\lib\http\client.py&quot;, line 1008, in _send_output
+    self.send(msg)
+  File &quot;C:\Python\lib\http\client.py&quot;, line 948, in send
+    self.connect()
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\connection.py&quot;, line 200, in connect
+    conn = self._new_conn()
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\connection.py&quot;, line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000001D410684DC0&gt;: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\behave\model.py&quot;, line 1329, in run
+    match.run(runner.context)
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\behave\matchers.py&quot;, line 98, in run
+    self.func(context, *args, **kwargs)
+  File &quot;steps\search_google_test.py&quot;, line 39, in step
+    WebDriverWait(context.browser, 3).until(
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\selenium\webdriver\support\wait.py&quot;, line 71, in until
+    value = method(self._driver)
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\selenium\webdriver\support\expected_conditions.py&quot;, line 64, in __call__
+    return _find_element(driver, self.locator)
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\selenium\webdriver\support\expected_conditions.py&quot;, line 411, in _find_element
+    return driver.find_element(*by)
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py&quot;, line 976, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\selenium\webdriver\remote\webdriver.py&quot;, line 319, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\selenium\webdriver\remote\remote_connection.py&quot;, line 374, in execute
+    return self._request(command_info[0], url, body=data)
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\selenium\webdriver\remote\remote_connection.py&quot;, line 397, in _request
+    resp = self._conn.request(method, url, body=body, headers=headers)
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\request.py&quot;, line 78, in request
+    return self.request_encode_body(
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\request.py&quot;, line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\poolmanager.py&quot;, line 375, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\connectionpool.py&quot;, line 783, in urlopen
+    return self.urlopen(
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\connectionpool.py&quot;, line 783, in urlopen
+    return self.urlopen(
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\connectionpool.py&quot;, line 783, in urlopen
+    return self.urlopen(
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\connectionpool.py&quot;, line 755, in urlopen
+    retries = retries.increment(
+  File &quot;c:\python\my_code\automation\projects\venv\lib\site-packages\urllib3\util\retry.py&quot;, line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=51733): Max retries exceeded with url: /session/150b039d7fd85e93ed0e715df1a5446f/element (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001D410684DC0&gt;: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+
+Captured logging:
+WARNING:urllib3.connectionpool:Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001D4106846D0&gt;: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/150b039d7fd85e93ed0e715df1a5446f/element
+WARNING:urllib3.connectionpool:Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001D4106849D0&gt;: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/150b039d7fd85e93ed0e715df1a5446f/element
+WARNING:urllib3.connectionpool:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001D410684AF0&gt;: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение')': /session/150b039d7fd85e93ed0e715df1a5446f/element</pre>
+                  
+            </span>
+          </li>
+        </ol>
+        <span/>
+      </div>
+      <div class="feature">
+        <h2>
+          <span class="val">Feature: Checking search</span>
+        </h2>
+        <span/>
+      </div>
+      <div class="scenario">
+        <span class="scenario_file">search_yandex_test.feature:5</span>
+        <h3 onclick="Collapsible_toggle('scenario_2')">
+          <span class="val">Scenario: Check some text in search results</span>
+        </h3>
+        <ol class="scenario_steps" id="scenario_2">
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">Given </span>
+              <span class="step val">
+                <span>website '</span>
+                <b>https://ya.ru</b>
+                <span>'</span>
+              </span>
+              <small class="step_duration">(1.890s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/search_yandex_test.py:10</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">When </span>
+              <span class="step val">
+                <span>search text '</span>
+                <b>Тест</b>
+                <span>'</span>
+              </span>
+              <small class="step_duration">(0.109s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/search_yandex_test.py:18</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">And </span>
+              <span class="step val">
+                <span>push button with text '</span>
+                <b>Найти</b>
+                <span>'</span>
+              </span>
+              <small class="step_duration">(0.129s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/search_yandex_test.py:24</span>
+            </div>
+            <span class="embed"/>
+          </li>
+          <li class="step passed">
+            <div class="step_name">
+              <span class="keyword">Then </span>
+              <span class="step val">
+                <span>page include text '</span>
+                <b>Тест</b>
+                <span>'</span>
+              </span>
+              <small class="step_duration">(3.360s)</small>
+            </div>
+            <div class="step_file">
+              <span>steps/search_yandex_test.py:33</span>
+            </div>
+            <span class="embed"/>
+          </li>
+        </ol>
+        <span/>
+      </div>
+    </div>
+  </body>
+</html>

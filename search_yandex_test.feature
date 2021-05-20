@@ -7,4 +7,4 @@ Feature: Checking search
     Given website 'https://ya.ru'
     When search text 'Тест'
     And push button with text 'Найти'
-    Then page include text 'НеТест'
+    Then page include text 'Тест'

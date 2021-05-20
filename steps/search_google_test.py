@@ -14,7 +14,7 @@ def step(context):
 
 
 # Введем поисковый запрос "Тест"
-@when("the search phrase '{phrase}' is entered")
+@when("the search phrase {phrase} is entered")
 def step(context, phrase):
     context.browser.find_element(By.XPATH, "//input[@name='q']").send_keys(f'{phrase}')
 
@@ -27,14 +27,14 @@ def step(context):
 
 
 # Проверим, что на странице с результатами поиска есть искомый текст
-@then("results for '{phrase}' are shown")
+@then("results for {phrase} are shown")
 def step(context, phrase):
     WebDriverWait(context.browser, 3).until(
         EC.presence_of_element_located((By.XPATH, f"//*[contains(text(), '{phrase}')]")))
     context.browser.quit()
 
 
-@then("the related results include '{related}'")
+@then("the related results include {related}")
 def step(context, related):
     WebDriverWait(context.browser, 3).until(
         EC.presence_of_element_located((By.XPATH, f"//*[contains(text(), '{related}')]")))
